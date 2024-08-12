@@ -2,6 +2,7 @@ package br.com.cenaflix.gui;
 
 import br.com.cenaflix.persistence.Usuario;
 import br.com.cenaflix.persistence.UsuarioJPA;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -10,12 +11,16 @@ import javax.swing.JOptionPane;
  */
 public class TelaLogin extends javax.swing.JFrame {
 
-    
     /**
      * Creates new form TelaLogin
      */
     public TelaLogin() {
         initComponents();
+        acessibilidadeAtalho();
+    }
+
+    public void acessibilidadeAtalho() {
+        btnLogin.setMnemonic(KeyEvent.VK_ENTER);
     }
 
     /**
@@ -91,7 +96,6 @@ public class TelaLogin extends javax.swing.JFrame {
         );
 
         btnLogin.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        btnLogin.setMnemonic('E');
         btnLogin.setText("Login");
         btnLogin.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +160,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        
+
         String login = txtLogin.getText();
         String senha = fmtSenha.getText();
 
