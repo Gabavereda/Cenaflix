@@ -2,7 +2,6 @@ package br.com.cenaflix.persistence;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PodcastJPA {
@@ -20,7 +19,6 @@ public class PodcastJPA {
             throw e;
         } finally {
             JPAUtil.closeEtityManager();
-
         }
 
     }
@@ -58,24 +56,23 @@ public class PodcastJPA {
     }
 
     public List<Podcast> buscar(String filtroProdutor) {
-    EntityManager em = JPAUtil.getEntityManager();
-    List podcasts = null;
-    try {
-        String textoQuery = "SELECT p FROM podcast p WHERE (:produtor IS NULL OR p.produtor LIKE :produtor)";
+        EntityManager em = JPAUtil.getEntityManager();
+        List podcasts = null;
+        try {
+            String textoQuery = "SELECT p FROM podcast p WHERE (:produtor IS NULL OR p.produtor LIKE :produtor)";
 
-        Query consulta = em.createQuery(textoQuery);
+            Query consulta = em.createQuery(textoQuery);
 
-        consulta.setParameter("produtor", filtroProdutor.isEmpty() ? null : "%" + filtroProdutor + "%");
+            consulta.setParameter("produtor", filtroProdutor.isEmpty() ? null : "%" + filtroProdutor + "%");
 
-        podcasts = consulta.getResultList();
-    } catch (Exception e) {
-        System.out.println("Ocorreu um erro ao listar os dados");
-        e.printStackTrace();
-    } finally {
-        JPAUtil.closeEtityManager();
+            podcasts = consulta.getResultList();
+        } catch (Exception e) {
+            System.out.println("Ocorreu um erro ao listar os dados");
+            e.printStackTrace();
+        } finally {
+            JPAUtil.closeEtityManager();
+        }
+        return podcasts;
     }
-    return podcasts;
-}
-
 
 }

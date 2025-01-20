@@ -1,7 +1,6 @@
 package br.com.cenaflix.persistence;
 
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.Query;
 import java.util.List;
 
 public class UsuarioJPA {
