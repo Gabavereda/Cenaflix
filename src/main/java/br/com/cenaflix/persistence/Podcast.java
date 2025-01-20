@@ -69,4 +69,7 @@ public class Podcast {
         this.duracao = duracao;
     }
 
+  
+    
+
 }

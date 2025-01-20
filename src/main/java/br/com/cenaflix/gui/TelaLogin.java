@@ -5,15 +5,8 @@ import br.com.cenaflix.persistence.UsuarioJPA;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author glaub
- */
 public class TelaLogin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaLogin
-     */
     public TelaLogin() {
         initComponents();
         acessibilidadeAtalho();
