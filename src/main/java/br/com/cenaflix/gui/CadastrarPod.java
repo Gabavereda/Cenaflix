@@ -2,12 +2,26 @@ package br.com.cenaflix.gui;
 
 import br.com.cenaflix.persistence.Podcast;
 import br.com.cenaflix.persistence.PodcastJPA;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class CadastrarPod extends javax.swing.JFrame {
 
     public CadastrarPod() {
         initComponents();
+
+        // Carrega a imagem do ícone
+        ImageIcon originalIcon = new ImageIcon(getClass().getResource("/META-INF/icone_plus_resize.png"));
+
+// Redimensiona a imagem (ajuste o tamanho desejado)
+        Image scaledImage = originalIcon.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+
+// Cria um novo ImageIcon com a imagem redimensionada
+        ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+// Define o ícone no botão
+        btnCadastrar.setIcon(scaledIcon);
     }
 
     @SuppressWarnings("unchecked")
@@ -74,17 +88,16 @@ public class CadastrarPod extends javax.swing.JFrame {
         });
 
         btnCadastrar.setFont(btnCadastrar.getFont().deriveFont(btnCadastrar.getFont().getStyle() | java.awt.Font.BOLD, 24));
-        btnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/icone_plus_resize.png"))); // NOI18N
         btnCadastrar.setAutoscrolls(true);
         btnCadastrar.setBorder(null);
         btnCadastrar.setBorderPainted(false);
         btnCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnCadastrar.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        btnCadastrar.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        btnCadastrar.setFocusPainted(false);
+        btnCadastrar.setFocusable(false);
         btnCadastrar.setOpaque(false);
         btnCadastrar.setPreferredSize(new java.awt.Dimension(0, 0));
-        btnCadastrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/icone_plus_resize.png"))); // NOI18N
-        btnCadastrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/icone_plus_resize.png"))); // NOI18N
-        btnCadastrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/icone_plus_resize.png"))); // NOI18N
+        btnCadastrar.setRequestFocusEnabled(false);
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarActionPerformed(evt);
@@ -105,26 +118,26 @@ public class CadastrarPod extends javax.swing.JFrame {
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(228, 228, 228)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtProdutor)
-                            .addComponent(jLabel4)
-                            .addComponent(txtNome)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtNumeroEpisodio))
-                            .addComponent(txtURL)
-                            .addComponent(fmtDuracao)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(149, 149, 149)
-                        .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(66, Short.MAX_VALUE))
+                                .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53)
+                                .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtProdutor)
+                                .addComponent(jLabel4)
+                                .addComponent(txtNome)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtNumeroEpisodio))
+                                .addComponent(txtURL)
+                                .addComponent(fmtDuracao)))))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,14 +166,11 @@ public class CadastrarPod extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtURL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(btnListar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addGap(51, 51, 51)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnListar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         btnCadastrar.getAccessibleContext().setAccessibleParent(btnListar);
