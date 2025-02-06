@@ -160,24 +160,7 @@ public class CadastrarPod extends javax.swing.JFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
 
-        Podcast p = new Podcast();
-
-        try {
-            p.setProdutor(txtProdutor.getText());
-            p.setNome_do_episodio(txtNome.getText());
-            p.setN_episodio(Integer.parseInt(txtNumeroEpisodio.getText()));
-            p.setUrl(txtURL.getText());
-            p.setDuracao(fmtDuracao.getText());
-
-            PodcastJPA podcastJPA = new PodcastJPA();
-            podcastJPA.cadastrarPodcast(p);
-            JOptionPane.showMessageDialog(null, "Podcast Cadastrado");
-        } catch (Exception e) {
-            System.out.println("Ocorreu erro em " + e.getMessage());
-
-        }
-
-
+        cadastrarPodcast();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
@@ -233,4 +216,24 @@ public class CadastrarPod extends javax.swing.JFrame {
     private javax.swing.JTextField txtProdutor;
     private javax.swing.JTextField txtURL;
     // End of variables declaration//GEN-END:variables
+
+    public void cadastrarPodcast() {
+
+        Podcast p = new Podcast();
+
+        try {
+            p.setProdutor(txtProdutor.getText());
+            p.setNome_do_episodio(txtNome.getText());
+            p.setN_episodio(Integer.parseInt(txtNumeroEpisodio.getText()));
+            p.setUrl(txtURL.getText());
+            p.setDuracao(fmtDuracao.getText());
+
+            PodcastJPA podcastJPA = new PodcastJPA();
+            podcastJPA.cadastrarPodcast(p);
+            JOptionPane.showMessageDialog(null, "Podcast Cadastrado");
+        } catch (Exception e) {
+            System.out.println("Ocorreu erro em " + e.getMessage());
+        }
+    }
+
 }
