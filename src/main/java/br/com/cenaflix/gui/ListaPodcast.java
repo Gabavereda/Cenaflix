@@ -101,7 +101,7 @@ public class ListaPodcast extends javax.swing.JFrame {
 
         btnCadastrar.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         btnCadastrar.setText("Cadastrar novo Podcast");
-        btnCadastrar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCadastrar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 5, true));
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarActionPerformed(evt);
