@@ -2,12 +2,26 @@ package br.com.cenaflix.gui;
 
 import br.com.cenaflix.persistence.Podcast;
 import br.com.cenaflix.persistence.PodcastJPA;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class CadastrarPod extends javax.swing.JFrame {
 
     public CadastrarPod() {
         initComponents();
+
+        // Carrega a imagem do ícone
+        ImageIcon originalIcon = new ImageIcon(getClass().getResource("/META-INF/icone_plus_resize.png"));
+
+// Redimensiona a imagem (ajuste o tamanho desejado)
+        Image scaledImage = originalIcon.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+
+// Cria um novo ImageIcon com a imagem redimensionada
+        ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+// Define o ícone no botão
+        btnCadastrar.setIcon(scaledIcon);
     }
 
     @SuppressWarnings("unchecked")
@@ -66,16 +80,24 @@ public class CadastrarPod extends javax.swing.JFrame {
 
         btnListar.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         btnListar.setText("Ver listagem");
-        btnListar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnListar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
         btnListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnListarActionPerformed(evt);
             }
         });
 
-        btnCadastrar.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        btnCadastrar.setText("Cadastrar");
-        btnCadastrar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCadastrar.setFont(btnCadastrar.getFont().deriveFont(btnCadastrar.getFont().getStyle() | java.awt.Font.BOLD, 24));
+        btnCadastrar.setAutoscrolls(true);
+        btnCadastrar.setBorder(null);
+        btnCadastrar.setBorderPainted(false);
+        btnCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCadastrar.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        btnCadastrar.setFocusPainted(false);
+        btnCadastrar.setFocusable(false);
+        btnCadastrar.setOpaque(false);
+        btnCadastrar.setPreferredSize(new java.awt.Dimension(0, 0));
+        btnCadastrar.setRequestFocusEnabled(false);
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarActionPerformed(evt);
@@ -96,27 +118,26 @@ public class CadastrarPod extends javax.swing.JFrame {
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(228, 228, 228)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtProdutor)
-                            .addComponent(jLabel4)
-                            .addComponent(txtNome)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtNumeroEpisodio))
-                            .addComponent(txtURL)
-                            .addComponent(fmtDuracao))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
-                .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66))
+                                .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53)
+                                .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtProdutor)
+                                .addComponent(jLabel4)
+                                .addComponent(txtNome)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtNumeroEpisodio))
+                                .addComponent(txtURL)
+                                .addComponent(fmtDuracao)))))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,13 +167,12 @@ public class CadastrarPod extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtURL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnListar)
-                    .addComponent(btnCadastrar))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnListar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
-        txtURL.getAccessibleContext().setAccessibleParent(btnCadastrar);
         btnCadastrar.getAccessibleContext().setAccessibleParent(btnListar);
 
         pack();
@@ -161,24 +181,7 @@ public class CadastrarPod extends javax.swing.JFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
 
-        Podcast p = new Podcast();
-
-        try {
-            p.setProdutor(txtProdutor.getText());
-            p.setNome_do_episodio(txtNome.getText());
-            p.setN_episodio(Integer.parseInt(txtNumeroEpisodio.getText()));
-            p.setUrl(txtURL.getText());
-            p.setDuracao(fmtDuracao.getText());
-
-            PodcastJPA podcastJPA = new PodcastJPA();
-            podcastJPA.cadastrarPodcast(p);
-            JOptionPane.showMessageDialog(null, "Podcast Cadastrado");
-        } catch (Exception e) {
-            System.out.println("Ocorreu erro em " + e.getMessage());
-
-        }
-
-
+        cadastrarPodcast();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
@@ -234,4 +237,24 @@ public class CadastrarPod extends javax.swing.JFrame {
     private javax.swing.JTextField txtProdutor;
     private javax.swing.JTextField txtURL;
     // End of variables declaration//GEN-END:variables
+
+    public void cadastrarPodcast() {
+
+        Podcast p = new Podcast();
+
+        try {
+            p.setProdutor(txtProdutor.getText());
+            p.setNome_do_episodio(txtNome.getText());
+            p.setN_episodio(Integer.parseInt(txtNumeroEpisodio.getText()));
+            p.setUrl(txtURL.getText());
+            p.setDuracao(fmtDuracao.getText());
+
+            PodcastJPA podcastJPA = new PodcastJPA();
+            podcastJPA.cadastrarPodcast(p);
+            JOptionPane.showMessageDialog(null, "Podcast Cadastrado");
+        } catch (Exception e) {
+            System.out.println("Ocorreu erro em " + e.getMessage());
+        }
+    }
+
 }

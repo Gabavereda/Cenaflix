@@ -101,7 +101,7 @@ public class ListaPodcast extends javax.swing.JFrame {
 
         btnCadastrar.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         btnCadastrar.setText("Cadastrar novo Podcast");
-        btnCadastrar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCadastrar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarActionPerformed(evt);
@@ -111,7 +111,7 @@ public class ListaPodcast extends javax.swing.JFrame {
         btnExcluir.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
         btnExcluir.setForeground(new java.awt.Color(255, 0, 51));
         btnExcluir.setText("Excluir");
-        btnExcluir.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnExcluir.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExcluirActionPerformed(evt);
@@ -125,57 +125,51 @@ public class ListaPodcast extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(265, 265, 265)
-                        .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(59, 59, 59)
-                        .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 47, Short.MAX_VALUE))
+                .addGap(6, 6, 6)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2)
+                                .addGap(316, 316, 316)
                                 .addComponent(jLabel4))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(319, 319, 319)
-                                .addComponent(jLabel3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(293, 293, 293)
-                                .addComponent(jLabel2)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jSeparator1)))
-                .addContainerGap())
+                                .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnCadastrar)
+                                .addGap(24, 24, 24)
+                                .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addGap(41, 41, 41)
+                .addGap(150, 150, 150)
                 .addComponent(jLabel4)
-                .addGap(18, 18, 18)
+                .addGap(415, 415, 415)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(33, 33, 33)
+                .addComponent(jLabel3)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCadastrar)
                     .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -192,30 +186,7 @@ public class ListaPodcast extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExlcuirActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        try {
-
-            if (tblListaPod.getSelectedRow() < -0) {
-                JOptionPane.showMessageDialog(null, "Clique na linha que Deseja Excluir");
-            } else {
-                //obtém o valor da coluna id da linha selecionada
-                String id = (String) tblListaPod.getValueAt(tblListaPod.getSelectedRow(), 0);
-                //janela de confirmação
-                int resposta = JOptionPane.showConfirmDialog(this, "Deseja mesmo excluir o registro " + id + "?");
-                if (resposta == 0)//0- yes, 1- no, 2- cancel
-                {
-                    //realizando a exclusão
-                    PodcastJPA podcastJPA = new PodcastJPA();
-                    podcastJPA.excluir(Integer.parseInt(id));
-                    JOptionPane.showMessageDialog(this, "Registro excluído com sucesso");
-                    //refazendo a pesquisa para atualizar a tabela na tela
-
-                }
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Ocorreu uma falha:\n" + e.getMessage());
-        }
-
-
+        excluirItem();
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
@@ -307,6 +278,32 @@ public class ListaPodcast extends javax.swing.JFrame {
         }
         DefaultTableModel model = new DefaultTableModel(dados, columns);
         tblListaPod.setModel(model);
+
+    }
+
+    public void excluirItem() {
+        try {
+
+            if (tblListaPod.getSelectedRow() < -0) {
+                JOptionPane.showMessageDialog(null, "Clique na linha que Deseja Excluir");
+            } else {
+                //obtém o valor da coluna id da linha selecionada
+                String id = (String) tblListaPod.getValueAt(tblListaPod.getSelectedRow(), 0);
+                //janela de confirmação
+                int resposta = JOptionPane.showConfirmDialog(this, "Deseja mesmo excluir o registro " + id + "?");
+                if (resposta == 0)//0- yes, 1- no, 2- cancel
+                {
+                    //realizando a exclusão
+                    PodcastJPA podcastJPA = new PodcastJPA();
+                    podcastJPA.excluir(Integer.parseInt(id));
+                    JOptionPane.showMessageDialog(this, "Registro excluído com sucesso");
+                    //refazendo a pesquisa para atualizar a tabela na tela
+
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocorreu uma falha:\n" + e.getMessage());
+        }
 
     }
 
