@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 public class Cenaflix {
 
     public static void main(String[] args) {
-        
+
         // INFO PARA lOGIN
         JOptionPane.showMessageDialog(null, "Para validar usuarios\nLogin:user1 Senha:123\nLogin:user2 Senha:123\nLogin:user3 Senha:123 ", "Atenção", 0);
 
