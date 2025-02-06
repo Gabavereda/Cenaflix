@@ -186,30 +186,7 @@ public class ListaPodcast extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExlcuirActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        try {
-
-            if (tblListaPod.getSelectedRow() < -0) {
-                JOptionPane.showMessageDialog(null, "Clique na linha que Deseja Excluir");
-            } else {
-                //obtém o valor da coluna id da linha selecionada
-                String id = (String) tblListaPod.getValueAt(tblListaPod.getSelectedRow(), 0);
-                //janela de confirmação
-                int resposta = JOptionPane.showConfirmDialog(this, "Deseja mesmo excluir o registro " + id + "?");
-                if (resposta == 0)//0- yes, 1- no, 2- cancel
-                {
-                    //realizando a exclusão
-                    PodcastJPA podcastJPA = new PodcastJPA();
-                    podcastJPA.excluir(Integer.parseInt(id));
-                    JOptionPane.showMessageDialog(this, "Registro excluído com sucesso");
-                    //refazendo a pesquisa para atualizar a tabela na tela
-
-                }
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Ocorreu uma falha:\n" + e.getMessage());
-        }
-
-
+        excluirItem();
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
@@ -301,6 +278,32 @@ public class ListaPodcast extends javax.swing.JFrame {
         }
         DefaultTableModel model = new DefaultTableModel(dados, columns);
         tblListaPod.setModel(model);
+
+    }
+
+    public void excluirItem() {
+        try {
+
+            if (tblListaPod.getSelectedRow() < -0) {
+                JOptionPane.showMessageDialog(null, "Clique na linha que Deseja Excluir");
+            } else {
+                //obtém o valor da coluna id da linha selecionada
+                String id = (String) tblListaPod.getValueAt(tblListaPod.getSelectedRow(), 0);
+                //janela de confirmação
+                int resposta = JOptionPane.showConfirmDialog(this, "Deseja mesmo excluir o registro " + id + "?");
+                if (resposta == 0)//0- yes, 1- no, 2- cancel
+                {
+                    //realizando a exclusão
+                    PodcastJPA podcastJPA = new PodcastJPA();
+                    podcastJPA.excluir(Integer.parseInt(id));
+                    JOptionPane.showMessageDialog(this, "Registro excluído com sucesso");
+                    //refazendo a pesquisa para atualizar a tabela na tela
+
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocorreu uma falha:\n" + e.getMessage());
+        }
 
     }
 
