@@ -101,7 +101,7 @@ public class ListaPodcast extends javax.swing.JFrame {
 
         btnCadastrar.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         btnCadastrar.setText("Cadastrar novo Podcast");
-        btnCadastrar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 5, true));
+        btnCadastrar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarActionPerformed(evt);
@@ -111,7 +111,7 @@ public class ListaPodcast extends javax.swing.JFrame {
         btnExcluir.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
         btnExcluir.setForeground(new java.awt.Color(255, 0, 51));
         btnExcluir.setText("Excluir");
-        btnExcluir.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnExcluir.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExcluirActionPerformed(evt);
